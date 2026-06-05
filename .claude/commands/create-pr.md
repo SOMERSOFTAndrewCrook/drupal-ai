@@ -1,6 +1,6 @@
 ---
 name: create-pr
-description: Create a Pull Request from the current branch targeting develop, with correct COS-XXX title format, Jira link in the body, and optional Jira status sync.
+description: Create a Pull Request from the current branch targeting develop, with correct PRJ-XXX title format, Jira link in the body, and optional Jira status sync.
 allowed-tools: Bash(git branch --show-current:), Bash(git log *:), Bash(git push *:), Bash(gh pr create:), Bash(gh pr view:), Bash(acli jira auth status:), Bash(acli jira workitem view:), Bash(acli jira workitem transition:), Bash(cat .claude/data/mappings.json:)
 ---
 
@@ -22,7 +22,7 @@ No arguments required. Operates on the current branch.
 git branch --show-current
 ```
 
-Detect the Jira ticket from the branch name (e.g. `COS-356-lucidworks-indexing-endpoints` → `COS-356`).
+Detect the Jira ticket from the branch name (e.g. `PRJ-356-lucidworks-indexing-endpoints` → `PRJ-356`).
 
 If no ticket detected → ask the user for the ticket ID before continuing.
 
@@ -55,7 +55,7 @@ Display detected info and ask once:
 > Branch: **<branch>**
 > Jira ticket: **<ticket>**
 >
-> PR title: (pre-filled as `COS-XXX: <description inferred from commits>`)
+> PR title: (pre-filled as `PRJ-XXX: <description inferred from commits>`)
 > PR description: (leave blank to auto-generate from commits, or type your own)
 > Create as draft? (Y/n)
 
@@ -138,7 +138,7 @@ Include the PR URL.
 ## Rules
 
 - Always target `develop`
-- Title must follow `COS-XXX: Description` format
+- Title must follow `PRJ-XXX: Description` format
 - Default to draft — the `/ready-pr-in-review` command promotes it when ready
 - Never commit or push unrelated changes
 - Jira failure must never block PR creation

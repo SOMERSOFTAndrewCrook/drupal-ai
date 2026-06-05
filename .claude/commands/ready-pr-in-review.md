@@ -27,7 +27,7 @@ Display:
 - PR number, title, branch
 - Draft status
 - Author
-- Jira ticket (detected from title, body, or branch — e.g. `COS-703`)
+- Jira ticket (detected from title, body, or branch — e.g. `PRJ-703`)
 
 ---
 

@@ -69,7 +69,7 @@ Search in:
 - body
 - branch
 
-Example: `COS-703`
+Example: `PRJ-703`
 
 If none found:
 - continue without Jira
